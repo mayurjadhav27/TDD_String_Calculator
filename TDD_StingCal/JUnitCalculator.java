@@ -10,9 +10,13 @@ public class JUnitCalculator {
 		  return i;
 		}
 		else if(text.contains(",")){
-			String[] nums=text.split(",");
-			return Integer.parseInt(nums[0])+Integer.parseInt(nums[1]);
-		}
+			int sum=0;
+            String[] nums=text.split(",");
+			for(int i=0;i<nums.length;i++){
+				sum+=Integer.parseInt(nums[i]);
+			}
+			return sum;
+        }
 		else{
 			return 0;
 		}

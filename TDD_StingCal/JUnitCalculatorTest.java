@@ -15,5 +15,10 @@ public class JUnitCalculatorTest {
      public void sumof2numns(){
         assertEquals(3,JUnitCalculator.Add("1,2"));
      }
+     
+    @Test
+    public void multiplenums(){
+	   assertEquals(10,JUnitCalculator.Add("1,2,3,4"));
+    }
     
 }
