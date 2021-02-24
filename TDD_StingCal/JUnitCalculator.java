@@ -9,9 +9,9 @@ public class JUnitCalculator {
 			int i=Integer.parseInt(text);
 		  return i;
 		}
-		else if(text.contains(",")){
+		else if(text.contains(",") || text.contains("\\n")){
 			int sum=0;
-            String[] nums=text.split(",");
+            String[] nums=text.split(",|\n");
 			for(int i=0;i<nums.length;i++){
 				sum+=Integer.parseInt(nums[i]);
 			}

@@ -21,4 +21,8 @@ public class JUnitCalculatorTest {
 	   assertEquals(10,JUnitCalculator.Add("1,2,3,4"));
     }
     
+    @Test
+    public void handleNewLineInNum(){
+	   assertEquals(11,JUnitCalculator.Add("1\n2,3,5"));
+    }
 }
