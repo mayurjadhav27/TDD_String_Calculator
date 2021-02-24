@@ -9,6 +9,18 @@ public class JUnitCalculator {
 			int i=Integer.parseInt(text);
 		  return i;
 		}
+        else if(text.contains("//")){
+            char delimiter=text.charAt(2);
+            String s=text.substring(4);
+            int sum=0;
+            String[] nums=s.split(Character.toString(delimiter));
+			for(int i=0;i<nums.length;i++){
+				sum+=Integer.parseInt(nums[i]);
+			}
+			return sum;
+        
+        }
+
 		else if(text.contains(",") || text.contains("\\n")){
 			int sum=0;
             String[] nums=text.split(",|\n");

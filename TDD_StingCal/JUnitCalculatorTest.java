@@ -25,4 +25,9 @@ public class JUnitCalculatorTest {
     public void handleNewLineInNum(){
 	   assertEquals(11,JUnitCalculator.Add("1\n2,3,5"));
     }
+    
+    @Test
+    public void differentdelimiter(){
+	   assertEquals(6,JUnitCalculator.Add("//;\n1;2;3"));
+    }
 }
