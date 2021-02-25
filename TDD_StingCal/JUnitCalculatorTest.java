@@ -36,16 +36,27 @@ public class JUnitCalculatorTest {
 			JUnitCalculator.Add("-1,2");
 		}
 		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+			assertEquals("Negatives not allowed: -1", "Negatives not allowed: -1");
 		}
 
 		try {
 			JUnitCalculator.Add("2,-4,3,-5");
 		}
 		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
+			assertEquals("Negatives not allowed: -4,-5", "Negatives not allowed: -4,-5");
 		}
     }
+    @Test
+    public void numsOverThousand(){
+        try{
+    	assertEquals(2, JUnitCalculator.Add("2,1001"));
+        JUnitCalculator.Add("2,-4,3,-5");
+    }
+    catch(IllegalArgumentException e){
+        
+			assertEquals("Negatives not allowed: -4,-5", "Negatives not allowed: -4,-5");
+    }
+}
   
 
 }

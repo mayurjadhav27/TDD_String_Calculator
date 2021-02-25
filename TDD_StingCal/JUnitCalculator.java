@@ -9,6 +9,7 @@ public class JUnitCalculator {
 			int i=Integer.parseInt(text);
 		  return i;
 		}
+
         else if(text.contains("//")){
             char delimiter=text.charAt(2);
             String s=text.substring(4);
@@ -16,19 +17,33 @@ public class JUnitCalculator {
             String[] nums=s.split(Character.toString(delimiter));
 			for(int i=0;i<nums.length;i++){
                 if(Integer.parseInt(nums[i])<0){
-                    throw new IllegalArgumentException("negatives not allowed: " +text );
+                    throw new IllegalArgumentException("Negatives not allowed: " +text );
                 }
-				sum+=Integer.parseInt(nums[i]);
-			}
-			return sum;
-        
+                if(Integer.parseInt(nums[i])<1000)
+                {
+                
+                    sum+=Integer.parseInt(nums[i]);
+                }
         }
+        return sum;
+        }
+			
+        
+        
 
 		else if(text.contains(",") || text.contains("\\n")){
 			int sum=0;
             String[] nums=text.split(",|\n");
+
 			for(int i=0;i<nums.length;i++){
-				sum+=Integer.parseInt(nums[i]);
+                if(Integer.parseInt(nums[i])<0){
+                    throw new IllegalArgumentException("Negatives not allowed: " +text );
+                }
+                if(Integer.parseInt(nums[i])<1000)
+                {
+                
+                    sum+=Integer.parseInt(nums[i]);
+                }
 			}
 			return sum;
         }
