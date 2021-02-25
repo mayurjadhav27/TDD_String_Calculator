@@ -30,4 +30,22 @@ public class JUnitCalculatorTest {
     public void differentdelimiter(){
 	   assertEquals(6,JUnitCalculator.Add("//;\n1;2;3"));
     }
+    @Test
+    public void exceptionForNegNum(){
+    	try {
+			JUnitCalculator.Add("-1,2");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -1");
+		}
+
+		try {
+			JUnitCalculator.Add("2,-4,3,-5");
+		}
+		catch (IllegalArgumentException e){
+			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
+		}
+    }
+  
+
 }

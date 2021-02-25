@@ -15,6 +15,9 @@ public class JUnitCalculator {
             int sum=0;
             String[] nums=s.split(Character.toString(delimiter));
 			for(int i=0;i<nums.length;i++){
+                if(Integer.parseInt(nums[i])<0){
+                    throw new IllegalArgumentException("negatives not allowed: " +text );
+                }
 				sum+=Integer.parseInt(nums[i]);
 			}
 			return sum;
